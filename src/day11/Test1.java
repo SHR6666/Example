@@ -1,12 +1,24 @@
 package day11;
 
+/**
+ * 泛型方法
+ */
 public class Test1 {
     public static void main(String[] args) {
-        B1<Object> b1 = new B1<Object>();
-        B1<String> b2 = new B1<String>();
-        B1<Integer> b3 = new B1<Integer>();
+//        B1<Object> b1 = new B1<Object>();
+//        B1<String> b2 = new B1<String>();
+//        B1<Integer> b3 = new B1<Integer>();
 
 //        B2<String> b4 = new B2<String>();
+
+        Cc<Object> c = new Cc<Object>();
+        c.test("田文静，我cnm");
+        //泛型方法在调用之前没有固定的数据类型
+        //在调用时，传入的参数是什么类型，就会把泛型改成什么类型
+        //也就是说，泛型方法会在调用时确定泛型距离数据类型
+        Integer i = c.test1(2);   //传递的参数是Integer，泛型就固定成Integer，返回值就是Integer
+        Boolean b = c.test1(true);//传递的参数是Boolean，泛型就固定成Boolean，返回值就是Boolean
+
     }
 }
 
@@ -39,17 +51,38 @@ class B2 implements Id<String>{
     }
 }
 
-class Cc {
+class Cc<E> {
+    private E e;
+    /**
+     * 无返回值的泛型
+     * @param s
+     * @param <T>
+     */
     public<T> void test(T s){
+        //在类上的泛型，可以在普通方法中使用
+            System.out.println(this.e);
+
         T t = s;
     }
 
-    public<T> String test1(String s){
-        return s;
+    public<T> T test1(T i){
+        return i;
     }
 
+    /**
+     * 形参为可变参数的泛型
+     * @param strs
+     */
     public void test2(String... strs){
+        for (String s:
+             strs) {
+            System.out.println(s);
+        }
+    }
 
+    public static<T> void test3(T t){
+        //在静态方法中不能使用类定义泛型
+        System.out.println(t);
     }
 }
 
