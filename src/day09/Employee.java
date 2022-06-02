@@ -5,6 +5,7 @@ public abstract class Employee {
     String name;
     double salary;
 
+
     public abstract void work();
 
     static class CommonEmployee extends Employee {

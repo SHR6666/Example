@@ -8,8 +8,8 @@ import java.io.IOException;
 public class Test3 {
     public static void main(String[] args) {
 //        Test3.testFileReader("D:\\ѧϰ\\Javaѧϰ\\tt1.txt");
-//        Test3.testFileWriter("Hello World", "D:\\ѧϰ\\Javaѧϰ\\tt5.txt");
-        Test3.copyFile("D:\\ѧϰ\\Javaѧϰ\\tt5.txt", "D:\\ѧϰ\\Javaѧϰ\\1\\tt5.txt");
+//        Test3.testFileWriter("Hello World", "D:\\ѧϰ\\Javaѧϰ\\tt5.txt.txt");
+        Test3.copyFile("D:\\ѧϰ\\Javaѧϰ\\tt5.txt.txt", "D:\\ѧϰ\\Javaѧϰ\\1\\tt5.txt.txt");
     }
 
     /**
